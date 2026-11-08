@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bắt Tay – Sinh viên gặp startup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Bricolage+Grotesque:wght@700;800&display=swap">
+<style>
+:root{--bg:#EEF1F8;--sf:#fff;--ink:#0F1B3D;--mut:#55608480;--mut:#556084;--ln:#D5DBEA;--pri:#2B4BFF;--on:#fff;--sun:#FFC93C;--g:#1F9D6B;--y:#E8A317;--r:#D8453B;--gb:#DDF3E8;--yb:#FFF1CC;--rb:#FADDDA;--gt:#0F6B47;--yt:#7A5200;--rt:#9B2820;--hd:#EEF1F8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0B1226;--sf:#141D38;--ink:#EAF0FF;--mut:#9AA6C8;--ln:#2A3763;--pri:#8EA2FF;--on:#0B1226;--gb:#12372B;--yb:#3A2F0B;--rb:#411C1A;--hd:#0B1226;--gt:#6FE3B1;--yt:#FFD15C;--rt:#FF9B92;--g:#2EC48A;--y:#FFB81F;--r:#FF6B5E}}
+:root[data-theme=dark]{--bg:#0B1226;--sf:#141D38;--ink:#EAF0FF;--mut:#9AA6C8;--ln:#2A3763;--pri:#8EA2FF;--on:#0B1226;--gb:#12372B;--yb:#3A2F0B;--rb:#411C1A;--hd:#0B1226;--gt:#6FE3B1;--yt:#FFD15C;--rt:#FF9B92;--g:#2EC48A;--y:#FFB81F;--r:#FF6B5E}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;font:16px/1.6 'Be Vietnam Pro',system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--hd)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hd);border-bottom:1px solid var(--ln)}
+.hb{display:flex;align-items:center;gap:16px;max-width:1080px;margin:auto;padding:10px 20px;flex-wrap:wrap}
+.logo{font:800 24px 'Bricolage Grotesque',sans-serif;color:var(--ink);text-decoration:none}.logo i{color:var(--pri);font-style:normal}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav a{padding:8px 14px;border-radius:99px;color:var(--ink);text-decoration:none;font-size:15px}
+nav a:hover{background:var(--ln)}nav a[aria-current=page]{background:var(--ink);color:var(--bg)}
+h1,h2,h3{font-family:'Bricolage Grotesque','Be Vietnam Pro',sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800}
+h3{font-size:19px;font-weight:700;margin-top:1.4em}.card h3:first-child{margin-top:0}
+.lead{font-size:18px;max-width:60ch;color:var(--mut)}
+.mu{color:var(--mut);font-size:14px;margin:.2em 0}
+.w{max-width:1080px;margin:0 auto;padding:24px 20px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding-top:48px}
+.two{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+@media(max-width:760px){.hero,.two{grid-template-columns:1fr}.mx{grid-template-columns:1fr}}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.row.l{justify-content:flex-start}
+.row input{flex:1;min-width:140px;width:auto}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:20px}
+.card.dim{opacity:.8}
+article.card{display:flex;flex-direction:column;gap:10px}article.card h3{margin:0}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip,.ck{background:var(--bg);border:1px solid var(--ln);border-radius:99px;padding:4px 12px;font:14px 'Be Vietnam Pro',sans-serif;color:var(--ink)}
+button.chip{cursor:pointer}
+.bd{font-size:13px;font-weight:700;padding:3px 10px;border-radius:99px}.bd.on{background:var(--gb);color:var(--gt)}.bd.off{background:var(--yb);color:var(--yt)}
+.btn{font:700 15px 'Be Vietnam Pro',sans-serif;background:var(--pri);color:var(--on);border:2px solid var(--pri);border-radius:12px;padding:11px 20px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.o{background:none;color:var(--ink);border-color:var(--ink)}.btn.s{padding:7px 14px;font-size:14px}
+.btn:disabled{opacity:.5;cursor:not-allowed}.w100{width:100%}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+label,.lb{display:block;font-weight:600;font-size:15px;margin:14px 0 4px}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--sf);border:1.5px solid var(--ln);border-radius:10px;padding:10px 12px}
+input[type=range]{padding:0;accent-color:var(--pri)}
+.ck{display:inline-flex;gap:6px;align-items:center;font-weight:400;margin:0;cursor:pointer}.ck input{width:auto}
+.tb{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:20px}
+@media(max-width:760px){.tb{grid-template-columns:1fr}}
+.clock{background:#0F1B3D;color:#FFC93C;border-radius:14px;padding:18px;text-align:center;font:800 clamp(40px,8vw,60px)/1 'Bricolage Grotesque',sans-serif;font-variant-numeric:tabular-nums}
+.demo{display:grid;gap:16px;border:1.5px solid var(--ink)}
+.mx{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mx.mini{grid-template-columns:repeat(3,1fr)}
+.ln{border-radius:14px;padding:14px 16px;border-top:6px solid}
+.ln b{display:block;font:700 18px 'Bricolage Grotesque',sans-serif}.ln small{display:block;color:var(--mut);margin-bottom:6px}.ln ul{margin:0;padding-left:18px}
+.ln.g{background:var(--gb);border-color:var(--g)}.ln.g b{color:var(--gt)}
+.ln.y{background:var(--yb);border-color:var(--y)}.ln.y b{color:var(--yt)}
+.ln.r{background:var(--rb);border-color:var(--r)}.ln.r b{color:var(--rt)}
+.mini .ln{padding:8px 10px;border-top-width:4px}.mini .ln b{font-size:14px}
+.mt{display:flex;gap:6px;max-width:260px}.mt i{flex:1;height:10px;border-radius:99px;background:var(--ln)}.mt i.f{background:var(--pri)}
+.fit{border-radius:10px;padding:10px 12px;font-size:14px;margin:8px 0}.fit.g{background:var(--gb);color:var(--gt)}.fit.y{background:var(--yb);color:var(--yt)}.fit.r{background:var(--rb);color:var(--rt)}
+.big{font:800 26px 'Bricolage Grotesque',sans-serif;margin:.2em 0}
+.steps{display:flex;gap:18px;list-style:none;counter-reset:s;margin:0 auto;padding:24px 20px 0;flex-wrap:wrap}
+.steps li{counter-increment:s;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--mut)}
+.steps li::before{content:counter(s);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ln);font-weight:700}
+.steps li.cur{color:var(--ink);font-weight:700}.steps li.cur::before{background:var(--pri);border-color:var(--pri);color:var(--on)}
+.steps li.ok::before{content:"✓";background:var(--g);border-color:var(--g);color:#fff}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+.rt button{background:none;border:0;font-size:26px;color:var(--ln);cursor:pointer;padding:0 2px}.rt button.on{color:var(--y)}
+.dec{display:grid;gap:12px}
+.chat{display:grid;gap:8px;margin:8px 0 12px}.chat p{margin:0;padding:8px 12px;border-radius:12px;background:var(--sf);border:1px solid var(--ln);max-width:80%}.chat p.me{justify-self:end;background:var(--pri);color:var(--on);border-color:var(--pri)}
+.warn{background:var(--rb);color:var(--rt);padding:8px 12px;border-radius:10px;font-size:14px}
+.post{background:var(--sf);border:1.5px solid var(--ink);border-radius:20px;overflow:hidden;max-width:420px;width:100%;justify-self:center}
+.cov{background:var(--c);color:#fff;aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}.cov span{font:800 38px 'Bricolage Grotesque',sans-serif}
+.pb{padding:16px;display:grid;gap:12px}.pb ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}.pb li b{display:inline-block;min-width:80px}
+.qr{width:84px;height:84px;fill:#0F1B3D;background:#fff;padding:6px;border-radius:8px;border:1px solid var(--ln)}
+dt{font-weight:700;margin-top:10px}dd{margin:2px 0 0;color:var(--mut)}
+.em{grid-column:1/-1;color:var(--mut)}
+a.lk{color:var(--pri);font-size:14px}
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;opacity:0;transition:.25s;pointer-events:none;z-index:20;max-width:90vw;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="hb"><a class="logo" href="#home">Bắt <i>Tay</i></a><nav aria-label="Điều hướng chính"><a href="#home" data-v="home">Khám phá</a><a href="#week" data-v="week">Startup của tuần</a><a href="#profile" data-v="profile">Hồ sơ của tôi</a><a href="#how" data-v="how">Cách hoạt động</a></nav></div></header>
+<main id="app"></main>
+<footer class="w mu">Dữ liệu startup trong trang là dữ liệu mẫu để minh họa giao diện.</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const $=s=>document.querySelector(s),E=$('#app'),pad=n=>String(n).padStart(2,'0');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LV=['','Chỉ nêu lĩnh vực','Công khai một phần','Công khai đầy đủ'];
+const LN=[['g','Cam kết','Startup đảm bảo'],['y','Thương lượng','Có thể trao đổi'],['r','Chưa thể','Chưa đáp ứng ở giai đoạn này']];
+const CL=['#2B4BFF','#128A5B','#7A4DE0','#A86500','#D8453B','#0F1B3D'];
+const EX=['Có người kèm cặp','Có thù lao','Có giấy xác nhận thực tập','Làm từ xa được','Cơ hội ở lại lâu dài'];
+const C1=['Đề bài và thông tin rõ ràng','Phản hồi nhanh','Phong cách làm việc hợp','Quyền lợi đúng như mô tả'];
+const C2=['Chất lượng bài làm','Nộp đúng hạn','Chủ động hỏi đáp','Hợp văn hóa team'],C2v=[4,5,4,4];
+const S=[
+{id:'eduspark',n:'EduSpark',t:'EdTech',loc:'Hà Nội',on:1,h:[6,10],d:'Video ngắn giúp học sinh lớp 12 ôn thi cấp tốc. Nhóm 4 người, do Nam sáng lập.',g:'2.000 học sinh dùng thử trong học kỳ này.',p:'Giấy xác nhận thực tập, kèm 1 kèm 1 hằng tuần, thù lao theo sản phẩm.',i:2,r:['Marketing nội dung','Thiết kế giao diện'],m:[['Kèm 1 kèm 1 mỗi tuần','Giấy xác nhận thực tập'],['Giờ làm linh hoạt','Thù lao theo sản phẩm'],['Lương cố định','Cổ phần giai đoạn này']],k:'Viết bài đăng 150 chữ giới thiệu EduSpark cho sinh viên năm nhất, kèm 1 ý tiêu đề.'},
+{id:'greencart',n:'GreenCart',t:'Thương mại xanh',loc:'TP.HCM',on:1,h:[8,12],d:'Sàn bán thực phẩm hữu cơ từ hợp tác xã nhỏ, giao trong ngày tại nội thành.',g:'Mở thêm 3 quận và đạt 500 đơn mỗi tuần.',p:'Thù lao theo giờ, thưởng theo đơn, được thử vai trò quản lý vận hành.',i:3,r:['Phân tích dữ liệu','Vận hành đơn hàng'],m:[['Thù lao theo giờ','Dữ liệu thật để làm portfolio'],['Ca làm theo lịch học','Làm tại kho hoặc từ xa'],['Cổ phần','Cam kết ở lại sau thực tập']],k:'Từ bảng 20 đơn mẫu, chỉ ra 2 khung giờ đặt nhiều nhất và đề xuất 1 việc nên làm.'},
+{id:'fitpal',n:'FitPal',t:'HealthTech',loc:'Online',on:0,h:[10,15],d:'Ứng dụng nhắc tập luyện và ăn uống theo thói quen từng người.',g:'Ra bản beta trên Android.',p:'Thù lao theo mốc, tên trong ứng dụng, mentor kỹ thuật.',i:1,r:['Lập trình Flutter'],m:[['Mentor kỹ thuật','Tên trong ứng dụng'],['Lịch họp nhóm','Công cụ làm việc'],['Thù lao theo giờ','Làm ít hơn 10 giờ/tuần']],k:'Dựng 1 màn hình nhắc uống nước bằng Flutter trong 24 giờ.'},
+{id:'luaso',n:'Lúa Số',t:'AgriTech',loc:'Online',on:1,h:[4,6],d:'Bản tin giá nông sản mỗi sáng cho nông dân qua Zalo, có cảnh báo thời tiết.',g:'5.000 người nhận bản tin ổn định.',p:'Thư giới thiệu, chuyến thực địa miền Tây, thù lao nhỏ theo bài.',i:2,r:['Viết nội dung','Nghiên cứu thị trường'],m:[['Thư giới thiệu','Chuyến thực địa'],['Thời gian nộp bài','Chủ đề bài viết'],['Làm toàn thời gian','Lương cố định']],k:'Viết bản tin 100 chữ về giá cà phê hôm nay, dễ hiểu với người lớn tuổi.'},
+{id:'metromeal',n:'MetroMeal',t:'FoodTech',loc:'Hà Nội',on:1,h:[6,8],d:'Suất ăn trưa lành mạnh giao đến văn phòng gần ga metro.',g:'Ra mắt thực đơn tuần và đạt 300 suất mỗi ngày.',p:'Bữa ăn miễn phí, thù lao theo dự án, giấy xác nhận.',i:2,r:['Thiết kế đồ họa','Quay dựng video'],m:[['Bữa ăn miễn phí','Giấy xác nhận'],['Lịch quay theo buổi','Dùng sản phẩm làm portfolio'],['Lương cố định','Làm cuối tuần liên tục']],k:'Thiết kế 1 poster thực đơn tuần, khổ vuông, đủ 5 món.'},
+{id:'codenest',n:'CodeNest',t:'Cộng đồng lập trình',loc:'TP.HCM',on:0,h:[10,14],d:'Nơi sinh viên IT làm dự án thật theo nhóm nhỏ, có người review code.',g:'Mở 10 dự án mã nguồn mở.',p:'Review code, chứng nhận đóng góp, kết nối nhà tuyển dụng.',i:3,r:['Backend Node.js','Quản lý cộng đồng'],m:[['Review code','Chứng nhận đóng góp'],['Chọn dự án','Giờ làm việc'],['Thù lao','Cổ phần']],k:'Viết 1 API đăng ký thành viên có kiểm tra email trùng.'}];
+const SB=[['Cảnh 1','Hà ngồi ở thư viện, lướt Facebook, thấy bài “Startup của tuần” của dự án EdTech do Nam sáng lập.','Hà dừng lại, đọc kỹ 3 dòng chính, chụp màn hình rồi quét QR.','Hà: “Bài này ghi rõ cần Marketing, giờ mỗi tuần và quyền lợi, khác hẳn mấy bài tuyển thường.”','Người ngồi cầm điện thoại, ô bong bóng suy nghĩ có dấu tích.'],['Cảnh 2','Hà quét QR vào web, đọc hồ sơ startup (Ma trận kỳ vọng) và nhận Thử thách 24h.','Hà đối chiếu quỹ thời gian của mình với Ma trận, bấm nhận thử thách, làm bài, nộp trước hạn.','Hà: “Mình làm thử một bài nhỏ trước khi cam kết nhé.” Nam (chat): “Bạn cứ làm, hệ thống sẽ nhắc giúp khi gần hết giờ.”','Màn hình web, đồng hồ 24:00:00, mũi tên “nộp bài”.'],['Cảnh 3','24 giờ sau, hai bên đánh giá nhau trên web và quyết định chốt hoặc rút lui.','Nam và Hà chấm điểm 4 tiêu chí; Hà bấm Chốt vào team (hoặc cả hai bấm Rút lui lịch sự).','Tin nhắn mẫu: “Mình thấy phong cách làm việc chưa khớp lắm, cảm ơn bạn đã thử, mong còn dịp hợp tác.”','Hai người bắt tay hoặc cúi chào, hai ô điểm sao.']];
+const st={id:'eduspark',t0:0,sub:'',r1:[0,0,0,0],dec:null,hrs:8,sk:['Viết nội dung','Canva','Facebook Ads'],q:'',loc:'',tm:'',ch:[['Bạn','Mình làm thử một bài nhỏ trước khi cam kết nhé.'],['Startup','Bạn cứ làm, hệ thống sẽ nhắc giúp khi gần hết giờ.']]};
+let cur=location.hash.slice(1)||'home',tt;
+const cs=()=>S.find(x=>x.id===st.id)||S[0];
+const bd=s=>`<span class="bd ${s.on?'on':'off'}">${s.on?'Đang tuyển':'Tạm dừng'}</span>`;
+const chips=a=>`<div class="chips">${a.map(x=>`<span class="chip">${x}</span>`).join('')}</div>`;
+const mx=s=>`<div class="mx">${LN.map((l,i)=>`<div class="ln ${l[0]}"><b>${l[1]}</b><small>${l[2]}</small><ul>${s.m[i].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div>`;
+const fit=s=>st.hrs>=s.h[0]&&st.hrs<=s.h[1]?['g','Khớp: bạn có '+st.hrs+' giờ/tuần, startup cần '+s.h[0]+'–'+s.h[1]+' giờ.']:st.hrs<s.h[0]?['r','Lệch: bạn có '+st.hrs+' giờ/tuần, startup cần tối thiểu '+s.h[0]+' giờ.']:['y','Bạn rảnh nhiều hơn mức startup cần. Hãy hỏi thêm về phạm vi công việc.'];
+const steps=n=>`<ol class="steps w">${['Xem hồ sơ startup','Làm thử thách 24h','Đánh giá và quyết định'].map((t,i)=>`<li class="${i+1===n?'cur':i+1<n?'ok':''}">${t}</li>`).join('')}</ol>`;
+const card=s=>`<article class="card ${s.on?'':'dim'}"><div class="row"><h3>${s.n}</h3>${bd(s)}</div><p class="mu">${s.t}, ${s.loc}</p><p>${s.d}</p>${chips(s.r)}<div class="row"><span class="mu">${s.h[0]}–${s.h[1]} giờ/tuần</span><button class="btn s" data-a="open" data-id="${s.id}">Xem hồ sơ</button></div></article>`;
+function lst(){const q=st.q.toLowerCase(),t=st.tm?st.tm.split('-').map(Number):null;
+const a=S.filter(s=>(!q||(s.n+' '+s.t+' '+s.d+' '+s.r.join(' ')).toLowerCase().includes(q))&&(!st.loc||s.loc===st.loc)&&(!t||(s.h[0]<=t[1]&&s.h[1]>=t[0])));
+return a.length?a.map(card).join(''):'<p class="em">Chưa có startup khớp bộ lọc. Hãy bỏ bớt một điều kiện để xem thêm.</p>'}
+function home(){return `<section class="hero w"><div><h1>Thử việc 24 giờ, rồi mới quyết định.</h1><p class="lead">Hồ sơ startup được chuẩn hóa và có một đề bài nhỏ làm trong một ngày. Bạn hiểu đủ để chọn mà không cần nhắn hỏi lại nhiều.</p><div class="row l"><button class="btn" data-a="jump">Xem startup đang tuyển</button><a class="btn o" href="#profile">Tạo hồ sơ sinh viên</a></div></div><div class="card demo" aria-hidden="true"><div class="clock">24:00:00</div><div class="mx mini">${LN.map(l=>`<div class="ln ${l[0]}"><b>${l[1]}</b></div>`).join('')}</div><p class="mu">Mỗi hồ sơ startup có ma trận kỳ vọng 3 màu và một thử thách 24 giờ.</p></div></section>
+<section class="w" id="ls"><div class="tb"><input id="q" type="search" placeholder="Tìm theo tên, lĩnh vực hoặc vị trí" value="${esc(st.q)}" aria-label="Tìm startup"><select id="fl" aria-label="Vị trí">${['','Hà Nội','TP.HCM','Online'].map(o=>`<option value="${o}" ${st.loc===o?'selected':''}>${o||'Mọi vị trí'}</option>`).join('')}</select><select id="ft" aria-label="Quỹ thời gian">${[['','Mọi quỹ thời gian'],['0-6','Tối đa 6 giờ/tuần'],['6-10','6–10 giờ/tuần'],['10-40','Trên 10 giờ/tuần']].map(o=>`<option value="${o[0]}" ${st.tm===o[0]?'selected':''}>${o[1]}</option>`).join('')}</select></div><div class="g3" id="list">${lst()}</div></section>`}
+function startup(){const s=cs(),f=fit(s);return `${steps(1)}<section class="w two"><div><div class="row l"><h2>${s.n}</h2>${bd(s)}</div><p class="mu">${s.t}, ${s.loc}</p><p class="lead">${s.d}</p><h3>Mục tiêu giai đoạn này</h3><p>${s.g}</p><h3>Quyền lợi</h3><p>${s.p}</p><h3>Vị trí cần</h3>${chips(s.r)}<h3>Mức công khai ý tưởng</h3><div class="mt" aria-hidden="true">${[1,2,3].map(n=>`<i class="${n<=s.i?'f':''}"></i>`).join('')}</div><p class="mu">${LV[s.i]}</p></div>
+<aside class="card side"><h3>Quỹ thời gian</h3><p class="big">${s.h[0]}–${s.h[1]} giờ/tuần</p><p class="fit ${f[0]}">${f[1]}</p><a class="lk" href="#profile">Đổi quỹ thời gian của bạn</a><h3>Thử thách 24h</h3><p>${s.k}</p>${s.on?'<button class="btn w100" data-a="start">Nhận thử thách 24h</button>':'<button class="btn w100" disabled>Startup đang tạm dừng nhận bạn mới</button>'}</aside></section>
+<section class="w"><h3>Ma trận kỳ vọng</h3><p class="mu">Xanh là điều startup cam kết, vàng là điều có thể trao đổi, đỏ là điều chưa thể đáp ứng.</p>${mx(s)}</section>`}
+const skl=()=>st.sk.map((k,i)=>`<button class="chip" data-a="rmsk" data-i="${i}" aria-label="Xóa kỹ năng ${esc(k)}">${esc(k)} ×</button>`).join('');
+function profile(){return `<section class="w two"><div class="card"><h2>Hồ sơ sinh viên</h2><label for="pn">Họ tên</label><input id="pn" value="Nguyễn Thu Hà"><label for="ps">Trường và năm học</label><input id="ps" value="Năm 3, Truyền thông đa phương tiện"><div class="lb">Kỹ năng</div><div class="chips" id="sk">${skl()}</div><div class="row l" style="margin-top:10px"><input id="ns" placeholder="Thêm kỹ năng" aria-label="Thêm kỹ năng"><button class="btn s" data-a="addsk">Thêm</button></div><label for="pf">Portfolio</label><textarea id="pf" rows="3">behance.net/thuha, bài viết fanpage CLB Truyền thông</textarea><label for="pg">Mục tiêu cá nhân</label><textarea id="pg" rows="2">Có 1 dự án thật cho portfolio trước khi tốt nghiệp.</textarea><label for="hrs">Quỹ thời gian mỗi tuần: <b id="hv">${st.hrs}</b> giờ</label><input type="range" id="hrs" min="2" max="20" value="${st.hrs}"><div class="lb">Kỳ vọng của mình</div><div class="chips">${EX.map((x,i)=>`<label class="ck"><input type="checkbox" ${i<3?'checked':''}> ${x}</label>`).join('')}</div><p><button class="btn" data-a="save">Lưu hồ sơ</button></p></div>
+<aside class="card side"><h3>Hồ sơ này dùng để làm gì</h3><p>Startup xem kỹ năng, portfolio và quỹ thời gian của bạn. Khi bạn mở hồ sơ một startup, hệ thống tự đối chiếu giờ rảnh của bạn với ma trận kỳ vọng.</p></aside></section>`}
+const chat=()=>st.ch.map(m=>`<p class="${m[0]==='Bạn'?'me':''}"><b>${m[0]}</b> ${esc(m[1])}</p>`).join('');
+function task(){const s=cs();if(!st.t0)st.t0=Date.now();return `${steps(2)}<section class="w two"><div><h2>Thử thách 24h của ${s.n}</h2><p class="lead">${s.k}</p><label for="sub">Bài làm của bạn</label><textarea id="sub" rows="7" placeholder="Dán bài làm hoặc liên kết tới sản phẩm.">${esc(st.sub)}</textarea><div class="row l" style="margin-top:12px"><button class="btn" data-a="submit">Nộp bài</button><span class="mu" id="msg"></span></div><h3>Hỏi đáp ngắn</h3><div class="chat" id="chat">${chat()}</div><div class="row l"><input id="qa" placeholder="Hỏi startup một câu ngắn" aria-label="Câu hỏi"><button class="btn s" data-a="ask">Gửi</button></div></div>
+<aside class="card side"><h3>Thời gian còn lại</h3><div class="clock" id="clk">24:00:00</div><p class="warn" id="warn" hidden>Còn dưới 1 giờ. Hãy nộp bài trước khi đồng hồ về 0.</p><p class="mu">Hệ thống sẽ nhắc bạn khi gần hết giờ.</p></aside></section>`}
+const rate=i=>`<div class="rt" role="group" aria-label="${C1[i]}">${[1,2,3,4,5].map(n=>`<button data-a="rate" data-i="${i}" data-n="${n}" class="${st.r1[i]>=n?'on':''}" aria-label="${n} sao">★</button>`).join('')}</div>`;
+function dec(s,ok){
+if(st.dec==='join')return `<h3>Bạn đã vào team ${s.n}</h3><p>Hai bên đã cùng chốt. ${s.n} sẽ nhắn lịch họp đầu tiên cho bạn.</p><div><button class="btn" data-a="home">Khám phá startup khác</button></div>`;
+if(st.dec==='out')return `<h3>Rút lui lịch sự</h3><p>Chỉnh lại lời nhắn nếu muốn, rồi gửi cho ${s.n}.</p><textarea id="tpl" rows="3" aria-label="Lời nhắn">Mình thấy phong cách làm việc chưa khớp lắm, cảm ơn bạn đã cho mình thử sức, mong còn dịp hợp tác.</textarea><div class="row l"><button class="btn" data-a="send">Gửi lời nhắn</button><button class="btn o" data-a="back">Quay lại</button></div>`;
+if(st.dec==='sent')return `<h3>Đã gửi lời nhắn</h3><p>Cảm ơn bạn đã thử sức. Hồ sơ của bạn vẫn mở để các startup khác tìm thấy.</p><div><button class="btn" data-a="home">Khám phá startup khác</button></div>`;
+return `<h3>Quyết định của bạn</h3><p class="mu">${ok?'Hai bên đã chấm xong. Chọn một hướng để tiếp tục.':'Chấm đủ 4 tiêu chí để mở nút quyết định.'}</p><div class="row l"><button class="btn" data-a="join" ${ok?'':'disabled'}>Chốt vào team</button><button class="btn o" data-a="out" ${ok?'':'disabled'}>Rút lui lịch sự</button></div>`}
+function review(){const s=cs(),ok=st.r1.every(Boolean);return `${steps(3)}<section class="w two"><div class="card"><h3>Bạn chấm ${s.n}</h3>${C1.map((c,i)=>`<div class="rw"><span>${c}</span>${rate(i)}</div>`).join('')}</div><div class="card"><h3>${s.n} chấm bạn</h3>${C2.map((c,i)=>`<div class="rw"><span>${c}</span><b>${ok?C2v[i]+'/5':'Chờ'}</b></div>`).join('')}<p class="mu">${ok?'Startup đã chấm xong.':'Điểm của startup hiện ra sau khi bạn chấm đủ 4 tiêu chí.'}</p></div></section><section class="w"><div class="card dec">${dec(s,ok)}</div></section>`}
+function qr(s){let h=0,r='';for(const c of s.id)h=(h*31+c.charCodeAt(0))>>>0;
+for(let y=0;y<21;y++)for(let x=0;x<21;x++){let on;
+if((x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13)){const px=x>13?x-14:x,py=y>13?y-14:y;on=px===0||px===6||py===0||py===6||(px>1&&px<5&&py>1&&py<5)}
+else{h=(Math.imul(h,1103515245)+12345)>>>0;on=(h>>>16)&1}
+if(on)r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}
+return `<svg class="qr" viewBox="0 0 21 21" role="img" aria-label="Mã QR minh họa">${r}</svg>`}
+const post=s=>`<div class="cov" style="--c:${CL[S.indexOf(s)]}"><small>Startup của tuần</small><span>${s.n}</span></div><div class="pb"><div class="row">${bd(s)}<span class="mu">${s.t}</span></div><ul><li><b>Làm gì</b> ${s.d.split('.')[0]}</li><li><b>Cần ai</b> ${s.r.join(', ')}</li><li><b>Thời gian</b> ${s.h[0]}–${s.h[1]} giờ/tuần, có thử thách 24h</li></ul><div class="row l">${qr(s)}<div><b>Quét để xem hồ sơ</b><br><span class="mu">batay.vn/${s.id}</span></div></div></div>`;
+function week(){const s=cs();return `<section class="w two"><div><h2>Startup của tuần</h2><p class="lead">Mẫu bài đăng cho mạng xã hội: người xem biết startup làm gì, cần ai và muốn bấm vào website.</p><label for="ws">Chọn startup để đăng</label><select id="ws">${S.map(x=>`<option value="${x.id}" ${x.id===s.id?'selected':''}>${x.n}</option>`).join('')}</select><p class="mu">Bài đăng gồm ảnh bìa, 3 dòng thông tin chính, huy hiệu trạng thái và mã QR dẫn về website.</p></div><div class="post" id="post">${post(s)}</div></section>`}
+function how(){return `<section class="w"><h2>Hành trình 60 giây của Hà và Nam</h2><p class="lead">Storyboard video giới thiệu: từ bài đăng trên mạng xã hội đến quyết định chốt hoặc rút lui.</p><div class="g3">${SB.map(c=>`<article class="card"><h3>${c[0]}</h3><dl><dt>Bối cảnh</dt><dd>${c[1]}</dd><dt>Hoạt động</dt><dd>${c[2]}</dd><dt>Hộp thoại</dt><dd>${c[3]}</dd><dt>Hình cần vẽ</dt><dd>${c[4]}</dd></dl></article>`).join('')}</div></section>`}
+function clk(){const e=$('#clk');if(!e)return;const l=Math.max(0,864e5-(Date.now()-st.t0));e.textContent=pad(Math.floor(l/36e5))+':'+pad(Math.floor(l%36e5/6e4))+':'+pad(Math.floor(l%6e4/1e3));const w=$('#warn');if(w)w.hidden=l>36e5}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2800)}
+const V={home,startup,profile,task,review,week,how};
+const draw=()=>{E.innerHTML=(V[cur]||home)();clk()};
+function route(){draw();const n=['startup','task','review'].includes(cur)?'home':cur;document.querySelectorAll('nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===n?'page':'false'));scrollTo(0,0)}
+function go(v){cur=v;location.hash=v;route()}
+function act(a,b){
+if(a==='open'){st.id=b.dataset.id;go('startup')}
+else if(a==='jump')$('#ls').scrollIntoView({behavior:'smooth'});
+else if(a==='home')go('home');
+else if(a==='start'){st.t0=Date.now();st.sub='';st.r1=[0,0,0,0];st.dec=null;go('task')}
+else if(a==='addsk'){const i=$('#ns'),v=i.value.trim();if(v&&!st.sk.includes(v)){st.sk.push(v);$('#sk').innerHTML=skl()}i.value=''}
+else if(a==='rmsk'){st.sk.splice(+b.dataset.i,1);$('#sk').innerHTML=skl()}
+else if(a==='save')toast('Đã lưu hồ sơ. Giờ rảnh của bạn sẽ được đối chiếu khi xem từng startup.');
+else if(a==='ask'){const i=$('#qa'),v=i.value.trim();if(!v)return;st.ch.push(['Bạn',v]);i.value='';$('#chat').innerHTML=chat();setTimeout(()=>{st.ch.push(['Startup','Đã nhận câu hỏi. Chúng mình sẽ trả lời trong vài giờ, bạn cứ làm tiếp nhé.']);const c=$('#chat');if(c)c.innerHTML=chat()},900)}
+else if(a==='submit'){const v=$('#sub').value.trim();if(v.length<10){$('#msg').textContent='Hãy nhập bài làm trước khi nộp.';return}st.sub=v;go('review')}
+else if(a==='rate'){st.r1[+b.dataset.i]=+b.dataset.n;draw()}
+else if(a==='join'){st.dec='join';draw()}
+else if(a==='out'){st.dec='out';draw()}
+else if(a==='back'){st.dec=null;draw()}
+else if(a==='send'){st.dec='sent';draw()}}
+E.onclick=e=>{const b=e.target.closest('[data-a]');if(b)act(b.dataset.a,b)};
+E.onkeydown=e=>{if(e.key!=='Enter')return;if(e.target.id==='ns')act('addsk');if(e.target.id==='qa')act('ask')};
+E.oninput=e=>{const t=e.target;if(t.id==='q'){st.q=t.value;$('#list').innerHTML=lst()}else if(t.id==='hrs'){st.hrs=+t.value;$('#hv').textContent=t.value}else if(t.id==='sub')st.sub=t.value};
+E.onchange=e=>{const t=e.target;if(t.id==='fl'){st.loc=t.value;$('#list').innerHTML=lst()}else if(t.id==='ft'){st.tm=t.value;$('#list').innerHTML=lst()}else if(t.id==='ws'){st.id=t.value;$('#post').innerHTML=post(cs())}};
+addEventListener('hashchange',()=>{const v=location.hash.slice(1)||'home';if(v!==cur){cur=v;route()}});
+setInterval(clk,1000);
+route();
+</script>
+</body>
+</html>
